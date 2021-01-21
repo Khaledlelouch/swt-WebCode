@@ -1,1 +1,89 @@
-<p>edit-patient works!</p>
+<div class="container"><div><h3><b>Patienten Bearbeiten</b></h3></div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="editPatientForm" >
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="vorname">Vorname</label>
+          <input type="text" class="form-control" id="vorname"  name="vorname" required formControlName= "vorname">
+        </div>
+        <div class="col">
+          <label for="nachname">Nachname</label>
+          <input type="text" class="form-control" id="nachname"  name="nachname" required formControlName= "nachname">
+        </div>
+        <div class="col">
+          <label for="StationWaehlen"></label>
+          <select id="StationWaehlen" class="form-control">
+            <option selected>Station wählen</option>
+            <option>HNO</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="zimmerWaelen"></label>
+          <select id="zimmerWaelen" class="form-control">
+            <option selected>Zimmer wählen</option>
+            <option>1.1.0</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="geburtstag">Geburtsdatum</label>
+          <input type="text" class="form-control" id="geburtstag"  name="geburtstag" required formControlName= "geburtstag">
+        </div>
+        <div class="col">
+          <label for="einzugsDatum">Eintritts in Krankenhaus</label>
+          <input type="text" class="form-control" id="einzugsDatum"  name="einzugsDatum" required formControlName= "einzugsDatum">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="strasse">Strasse</label>
+          <input type="text" class="form-control" id="strasse"  name="strasse" required formControlName= "strasse">
+        </div>
+        <div class="col">
+          <label for="hausnr">Hausnummer</label>
+          <input type="text" class="form-control" id="hausnr"  name="hausnr" required formControlName= "hausnr">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ort">Stadt</label>
+          <input type="text" class="form-control" id="ort"  name="ort" required formControlName= "ort">
+        </div>
+        <div class="col">
+          <label for="postleitzahl">Postleitzahl</label>
+          <input type="text" class="form-control" id="postleitzahl"  name="postleitzahl" required formControlName= "postleitzahl">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="mobilnummer">Mobilfunknummer</label>
+          <input type="text" class="form-control" id="mobilnummer"  name="mobilnummer" required formControlName= "mobilnummer">
+        </div>
+        <div class="col">
+          <label for="erkrankung">Erkrankung</label>
+          <input type="text" class="form-control" id="erkrankung"  name="erkrankung" required formControlName= "erkrankung">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ernaehrungsTypAuswaelen">State</label>
+          <select id="ernaehrungsTypAuswaelen" class="form-control">
+            <option selected>Ernährungstyp auswählen</option>
+            <option>Vegan</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="allergien">Allergien wählen</label>
+          <select id="allergien" class="form-control">
+            <option selected>Allergien auswählen</option>
+            <option>Sonnenallergie</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled] =!editPatientForm.valid>Submit</button>
+  </form></div>
+<button class="btn btn-primary" (click)="dashBoard()">Startseite</button>
