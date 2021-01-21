@@ -1,18 +1,85 @@
-<div ><form>
-    <div class="row">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="First name">
+<h3><b>Startseite-Sekretär</b></h3>
+<div class="container"><div><h3><b>Patient Hinfügen</b></h3></div>
+  <hr color="black"/>
+  <form (ngSubmit)="onSubmit()" [formGroup]="createPatientForm" >
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="vorname">Vorname</label>
+          <input type="text" class="form-control" id="vorname"  name="vorname" required formControlName= "vorname">
+        </div>
+        <div class="col">
+          <label for="nachname">Nachname</label>
+          <input type="text" class="form-control" id="nachname"  name="nachname" required formControlName= "nachname">
+        </div>
+        <div class="col">
+          <label for="stationNummer">Station Wählen</label>
+          <input type="text" class="form-control" id="stationNummer"  name="stationNummer" required formControlName= "stationNummer">
+        </div>
+        <div class="col">
+          <label for="zimmerNummer">Zimmer Wählen</label>
+          <input type="text" class="form-control" id="zimmerNummer"  name="zimmerNummer" required formControlName= "zimmerNummer">
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Last name">
+      <div class="row">
+        <div class="col">
+          <label for="geburtstag">Geburtsdatum</label>
+          <input type="text" class="form-control" id="geburtstag"  name="geburtstag" required formControlName= "geburtstag">
+        </div>
+        <div class="col">
+          <label for="einzugsDatum">Eintritts in Krankenhaus</label>
+          <input type="text" class="form-control" id="einzugsDatum"  name="einzugsDatum" required formControlName= "einzugsDatum">
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Last name">
-      </div>  <div class="col">
-        <input type="text" class="form-control" placeholder="Last name">
-      </div>  <div class="col">
-        <input type="text" class="form-control" placeholder="Last name">
+      <div class="row">
+        <div class="col">
+          <label for="strasse">Strasse</label>
+          <input type="text" class="form-control" id="strasse"  name="strasse" required formControlName= "strasse">
+        </div>
+        <div class="col">
+          <label for="hausnr">Hausnummer</label>
+          <input type="text" class="form-control" id="hausnr"  name="hausnr" required formControlName= "hausnr">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ort">Stadt</label>
+          <input type="text" class="form-control" id="ort"  name="ort" required formControlName= "ort">
+        </div>
+        <div class="col">
+          <label for="postleitzahl">Postleitzahl</label>
+          <input type="text" class="form-control" id="postleitzahl"  name="postleitzahl" required formControlName= "postleitzahl">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="mobilnummer">Mobilfunknummer</label>
+          <input type="text" class="form-control" id="mobilnummer"  name="mobilnummer" required formControlName= "mobilnummer">
+        </div>
+        <div class="col">
+          <label for="erkrankung">Erkrankung</label>
+          <input type="text" class="form-control" id="erkrankung"  name="erkrankung" required formControlName= "erkrankung">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="ernaehrungsTypAuswaelen">State</label>
+          <select id="ernaehrungsTypAuswaelen" class="form-control">
+            <option selected>Ernährungstyp auswählen</option>
+            <option>Vegan</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="allergien">Allergien wählen</label>
+          <select id="allergien" class="form-control">
+            <option selected>Allergien auswählen</option>
+            <option>Sonnenallergie</option>
+          </select>
+        </div>
       </div>
     </div>
-  </form>
-</div>
+
+    <button type="submit" class="btn btn-primary" [disabled] =!createPatientForm.valid>Submit</button>
+    <button class="btn btn-primary" (click)="dashBoard()">Startseite</button>
+  </form></div>
