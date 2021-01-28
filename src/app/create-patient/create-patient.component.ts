@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { PatientService } from '../common/patient.service';
 
 @Component({
   selector: 'app-create-patient',
@@ -10,7 +11,7 @@ import {Router} from '@angular/router';
 export class CreatePatientComponent implements OnInit {
   createPatientForm: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: PatientService) { }
 
   ngOnInit(): void {
     this.createPatientForm = new FormGroup({
@@ -32,12 +33,17 @@ export class CreatePatientComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   onSubmit(){
-
+    console.log(this.createPatientForm.value);
+    this.service.createPatient(this.createPatientForm.value).subscribe(data => {
+      console.log(data);
+    }, error => {console.log(error); } );
+    this.router.navigate(['']);
   }
+
   // tslint:disable-next-line:typedef
   dashBoard(){
-    this.router.navigate(['/patient']);
+    this.router.navigate(['']);
   }
-
+  // tslint:disable-next-line:typedef
 
 }

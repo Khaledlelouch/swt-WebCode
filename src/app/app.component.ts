@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Patient } from './common/patient';
-import { PatientService } from './common/patient.service';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +9,11 @@ export class AppComponent implements OnInit {
   title = 'verpflegungsService';
 
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
- 
- 
+  ngOnInit(): void {
+
+
+  }
+
 }
-
-}
-
-

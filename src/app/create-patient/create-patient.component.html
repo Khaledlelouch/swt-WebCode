@@ -1,26 +1,36 @@
-<h3><b>Startseite-Sekretär</b></h3>
 <div class="container"><div><h3><b>Patient Hinfügen</b></h3></div>
-  <hr color="black"/>
   <form (ngSubmit)="onSubmit()" [formGroup]="createPatientForm" >
 
     <div class="form-group">
       <div class="row">
         <div class="col">
           <label for="vorname">Vorname</label>
-          <input type="text" class="form-control" id="vorname"  name="vorname" required formControlName= "vorname">
+          <input type="text" class="form-control" id="vorname"  name="vorname" required  formControlName= "vorname">
         </div>
         <div class="col">
           <label for="nachname">Nachname</label>
           <input type="text" class="form-control" id="nachname"  name="nachname" required formControlName= "nachname">
         </div>
         <div class="col">
-          <label for="stationNummer">Station Wählen</label>
-          <input type="text" class="form-control" id="stationNummer"  name="stationNummer" required formControlName= "stationNummer">
+          <label for="stationausNummer">Station auswählen</label>
+          <select class="form-control" id="stationausNummer" name="stationNummer" required formControlName= "stationNummer">
+            <option selected>--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
         </div>
         <div class="col">
-          <label for="zimmerNummer">Zimmer Wählen</label>
-          <input type="text" class="form-control" id="zimmerNummer"  name="zimmerNummer" required formControlName= "zimmerNummer">
-        </div>
+          <label for="ZimmerNummer">Zimmer auswählen</label>
+          <select class="form-control" id="zimmerNummer" name="zimmerNummer" required formControlName= "zimmerNummer">
+            <option selected>--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select> </div>
       </div>
       <div class="row">
         <div class="col">
@@ -29,7 +39,7 @@
         </div>
         <div class="col">
           <label for="einzugsDatum">Eintritts in Krankenhaus</label>
-          <input type="text" class="form-control" id="einzugsDatum"  name="einzugsDatum" required formControlName= "einzugsDatum">
+          <input type="text" class="form-control" id="einzugsDatum"  name="einzugsDatum" required  formControlName= "einzugsDatum">
         </div>
       </div>
       <div class="row">
@@ -55,7 +65,7 @@
       <div class="row">
         <div class="col">
           <label for="mobilnummer">Mobilfunknummer</label>
-          <input type="text" class="form-control" id="mobilnummer"  name="mobilnummer" required formControlName= "mobilnummer">
+          <input type="text" class="form-control" id="mobilnummer"  name="mobilnummer"  formControlName= "mobilnummer">
         </div>
         <div class="col">
           <label for="erkrankung">Erkrankung</label>
@@ -64,22 +74,33 @@
       </div>
       <div class="row">
         <div class="col">
-          <label for="ernaehrungsTypAuswaelen">State</label>
-          <select id="ernaehrungsTypAuswaelen" class="form-control">
-            <option selected>Ernährungstyp auswählen</option>
+          <label for="ernaehrungstyp">Ernährungstyp</label>
+          <select id="ernaehrungstyp" class="form-control" name="ernaehrungstyp" required formControlName="ernaehrungstyp">
+            <option selected>--</option>
             <option>Vegan</option>
+            <option>Vegetarier</option>
+            <option>Flexitarier</option>
+            <option>Normal</option>
+
           </select>
         </div>
         <div class="col">
-          <label for="allergien">Allergien wählen</label>
-          <select id="allergien" class="form-control">
-            <option selected>Allergien auswählen</option>
-            <option>Sonnenallergie</option>
-          </select>
-        </div>
+          <label for="allergien">Allergien auswählen</label>
+          <select id="allergien" class="form-control" name="allergien" required  formControlName="allergien">
+            <option selected>--</option>
+
+            <option>Ei</option>
+            <option>Erdnuss</option>
+            <option>Fisch</option>
+            <option>Gluten</option>
+            <option>Sojabohnen</option>
+            <option>Kuhmilch</option>
+            <option>Schalenfrüchte</option>
+            <option>Keine Allergie</option>
+
+          </select></div>
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled] =!createPatientForm.valid>Submit</button>
-    <button class="btn btn-primary" (click)="dashBoard()">Startseite</button>
+    <button type="submit" class="btn btn-primary" [disabled] =!createPatientForm.valid >Submit</button>
   </form></div>
