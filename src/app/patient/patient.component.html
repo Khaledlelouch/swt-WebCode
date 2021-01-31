@@ -8,7 +8,15 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </form>
-
+    <div class="col">
+          <label for="stationausNummer">Station auswählen</label>
+          <select class="form-control" id="stationausNummer" name="stationNummer" required formControlName= "stationNummer">
+            <option selected>--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
   </div>
 </span>
 
@@ -31,7 +39,7 @@
         <td>{{patient.vorname}} {{patient.nachname}}</td>
         <td>{{patient.erkrankung}}</td>
         <td>{{patient.stationNr}}</td>
-        <td>28.01.2021</td>
+        <td>{{patient.einzugsDatum}}</td>
         <td>{{patient.id}}</td>
         <td><button class="btn btn-primary" (click)=onEditPatient(patient.id)>Edit</button></td>
 

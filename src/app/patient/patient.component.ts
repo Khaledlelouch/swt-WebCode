@@ -27,6 +27,8 @@ export class PatientComponent implements OnInit {
   deletePatient(id: number){
     this.patientService.deletePatient(id).subscribe(data => {
       console.log(data);
+     window.location.reload();
+      this.router.navigate(['/']);
 
     }, error => console.log(error));
 
