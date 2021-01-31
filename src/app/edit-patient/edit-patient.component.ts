@@ -21,9 +21,13 @@ export class EditPatientComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     console.log(this.id);
+
     this.patientService.getPatientById(this.id).subscribe(data => {
         console.log(data);
+
         this.patient = data;
+        console.log(this.patient.zimmerNr);
+      console.log(this.patient.stationNr)
         this.editPatientForm = new FormGroup({
           vorname: new FormControl(this.patient.vorname),
           nachname: new FormControl(this.patient.nachname),
